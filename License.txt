@@ -1,0 +1,43 @@
+﻿CODEVOYANT SOFTWARE LICENSE AGREEMENT
+
+IMPORTANT – READ CAREFULLY: By installing or using CodeVoyant (“Software”), you (“Licensee”) agree to be bound by the terms of this Proprietary Software License Agreement (“License”). If you do not agree to these terms, do not install or use the Software.
+
+1. **Grant of License**  
+Licensor (“[Your Company Name]”) hereby grants you a non-exclusive, non-transferable, revocable license to install and use the Software solely as an add-in for Microsoft Visual Studio for your internal, non-commercial purposes.
+
+2. **Restrictions**  
+• You shall not distribute, sell, lease, sublicense, or otherwise transfer the Software or any portion thereof.  
+• You may not decompile, reverse engineer, disassemble, or modify the Software or create derivative works based on it.  
+• Any proprietary notices, labels, or copyright marks contained in the Software must be retained.  
+• The Software integrates third-party components — including large language models (LLMs) and systems such as Llama and OpenAI — that are governed by their own licenses; your use of those components is subject to compliance with their respective terms.
+
+3. **Intellectual Property Rights**  
+All title, ownership, and intellectual property rights in and to the Software, including any modifications or updates provided under this License, remain exclusively with Licensor. No title or ownership is transferred to you under this License.
+
+4. **Licensee Obligations**  
+• You shall use the Software only in compliance with all applicable laws and regulations.  
+• You shall not attempt to circumvent any security features or access controls implemented in the Software.  
+• You agree to maintain the confidentiality of any non-public information contained within the Software.
+
+5. **Third-Party Components**  
+The Software incorporates third-party LLM components (e.g., Llama, OpenAI). Use of these components is subject to their own licensing terms. Licensor disclaims any liability relating to third-party components; it is your responsibility to review and comply with the applicable licenses.
+
+6. **Termination**  
+This License is effective until terminated. Licensor may terminate this License immediately if you breach any provision herein. Upon termination, you must immediately cease using the Software and destroy all copies in your possession.
+
+7. **Disclaimer of Warranties and Third-Party LLM Service Disclaimer**  
+THE SOFTWARE IS PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.  
+Furthermore, the developer does not control, endorse, or guarantee the accuracy, security, or reliability of any third-party large language model (LLM) services configured or accessed by the user through this application. Use of any third-party LLM service is solely at the user's risk. It is the sole responsibility of the user to assess the suitability, security, and compliance of any third-party LLM service with applicable laws, regulations, and internal policies. By using this application, you acknowledge and agree that you assume all risks associated with the use of any third-party LLM services and release the developer from any and all liability arising from such use. This disclaimer is provided for general informational purposes only and does not constitute legal advice; users are encouraged to consult with a qualified legal professional regarding any legal concerns.
+
+8. **Limitation of Liability**  
+IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR PUNITIVE DAMAGES, OR ANY DAMAGES WHATSOEVER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, ARISING OUT OF OR RELATING TO THE USE OR INABILITY TO USE THE SOFTWARE or any third-party LLM service, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, LOSS OF PROFITS, OR INTERRUPTION OF BUSINESS.
+
+9. **Governing Law**  
+This License shall be governed by and construed in accordance with the laws of [Jurisdiction]. Any disputes arising from or relating to this License shall be exclusively resolved in the courts of [Jurisdiction].
+
+10. **Miscellaneous**  
+• This License constitutes the entire agreement between you and Licensor with respect to the Software and supersedes all prior agreements or understandings.  
+• Any waiver of a breach of any provision of this License shall not operate as a waiver of any subsequent breach.  
+• If any provision of this License is found to be unenforceable, the remaining provisions shall remain in full force and effect.
+
+BY INSTALLING OR USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE.
