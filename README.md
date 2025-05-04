@@ -3,25 +3,25 @@
 ![CodeVoyant Demo](images/DemoAnimation.gif)
 
 # Features
-* **Automated Documentation:** Instantly add language-specifc comment documentation like C#-style `<summary>` descriptions, parameter `<param>` tags, `<returns>` explanations, `<exception>` notes, and more for your functions and classes. Even inserts helpful inline code comments for complex logic.
-* **Multiple LLM Support:** Works with OpenAI (ChatGPT API), Azure OpenAI Service, or local models via Ollama. Choose GPT-4o or higher for best bang for the buck, or use a local Llama-based model hosted with your Ollama instance for security and cost cosinderations – CodeVoyant’s flexible backend supports it.
+* **Automated Documentation:** Instantly add language-specifc comment documentation like XML-style `<summary>` descriptions, parameter `<param>` tags, `<returns>` explanations, `<exception>` notes, and more for your functions and classes. Even inserts helpful inline code comments for complex logic.
+* **Multiple LLM Support:** Works with OpenAI (ChatGPT API), Azure OpenAI Service, or local models via Ollama. Experiment with OpenAI models for the best bang for the buck, or use a local Llama-based model hosted with your Ollama instance for security and cost cosinderations – CodeVoyant’s flexible backend supports it.
 * **Real-Time Streaming:** Documentation appears in your editor as it’s generated, line by line. No waiting for a huge response – see updates live and get immediate feedback.
-* **Custom Prompts:** You can customize the style and content of generated docs by providing your own instructions file. Guide the AI to match your project’s style guide or preferences (for example, require `<example>` sections or skip obvious comments).
-* **Integrated Workflow:** Use a simple command (e.g. a context menu **“Generate Comments”**) inside Visual Studio. The extension uses Visual Studio’s undo/redo, formatting, and output window to give a seamless, native feel.
+* **Custom Instructions:** You can customize the style and content of generated docs by providing your own instructions file. Guide the AI to match your project’s style guide or preferences (for example, require `<example>` sections or skip obvious comments).
+* **Integrated Workflow:** Use a simple context menu selection inside Visual Studio. The extension allows use of Visual Studio’s undo/redo, formatting, and output window to give a seamless, native feel.
 * **Token & Cost Control:** Set daily token limits for each AI provider in the options. This helps manage API usage (for OpenAI/Azure) to avoid unexpected costs by limiting how much content can be processed or generated per day.
 
 # Benefits
 * **🙌 Improved Code Quality:** Well-documented code is easier to understand and maintain for both humans and AI. CodeVoyant ensures every method or class gets clear documentation, which helps onboard team members and future-proof your codebase.
-* **⏱ Time Savings:** Just thinking about documentation and code comments can be time-consuming. CodeVoyant automates this tedious task – what used to take hours can now be done in seconds. Developers can spend more time coding and solving problems, less time writing comments.
+* **⏱ Time Savings:** Just thinking about documentation and code comments can be time-consuming. CodeVoyant automates this tedious task – what could take hours can now be ready for review in seconds. Developers can spend more time coding and solving problems, less time writing comments.
 * **⚙️ Flexibility:** Whether you prefer OpenAI’s latest models, have an enterprise Azure OpenAI deployment, or need an **offline** solution with local models, CodeVoyant has you covered. Switch providers anytime in the options to suit your needs or environment.
-* **🎛 Minimal Setup:** Just install the extension and configure your API keys (for OpenAI/Azure) or local endpoint (for Ollama). No complex configuration – it works out-of-the-box with sensible defaults (e.g., uses GPT-3.5 by default, which you can change).
+* **🎛 Minimal Setup:** Just install the extension and configure your API keys (for OpenAI/Azure) or local endpoint (for Ollama). No complex configuration – it works out-of-the-box.
 * **🔒 Privacy Control:** Concerned about sending code to the cloud? Use Ollama with a local LLM so your code stays on your machine. CodeVoyant gives you the choice to keep things local if required.
 
 # Installation
 Install CodeVoyant from the Visual Studio Marketplace (supports VS 2022 and later). After installation, open **Tools > Options > CodeVoyant** to select an LLM provider and enter any required API keys or endpoints. *(See detailed “Help Documentation” below for setup and usage instructions.)*
 
 # License
-CodeVoyant comes with a free 5-day trial and requires a user-proved LLM service. To continue using after the trial, purchase a license via the Gumroad link provided. Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
+CodeVoyant comes as a 5-day trial and requires a user-provided LLM service. To continue using after the trial, purchase a license via the Gumroad link [here](https://beanmasters.gumroad.com/l/CodeVoyantLiteForVisualStudio). Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
 
 - Ollama Setup: https://github.com/ollama/ollama/tree/main
 - OpenAI Pricing: https://openai.com/api/pricing/
@@ -35,17 +35,15 @@ By using this application, you acknowledge and agree that you assume all risks a
 
 # Help Documentation
 
-This section serves as the user guide for CodeVoyant. It covers installation, setup, usage, tips, and licensing. Share this with users via your README or a dedicated documentation site. Use a friendly, instructional tone.
-
 ## Installation Guide
 
-**Prerequisites:** Microsoft Visual Studio 2022 (or later). (The extension is tested on VS2022; it should also work on VS2022 Community/Professional/Enterprise editions. *If VS2019 is supported, mention it here.*) An internet connection is required for using cloud AI providers (OpenAI/Azure).
+**Prerequisites:** Microsoft Visual Studio 2022 (or later). (The extension is tested on VS2022; it should also work on VS2022 Community/Professional/Enterprise editions. *If interested in VS2019, join or post an issue.* An internet connection is required for using cloud AI providers (OpenAI/Azure).
 
 **Installation Steps:**
 
 1. **Download & Install Extension:** Get CodeVoyant from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=YourName.CodeVoyant) or via Visual Studio’s **Extensions > Manage Extensions** dialog (search “CodeVoyant”). Click **Download** and follow prompts to install.
-   *Alternatively, if you have a .vsix file (from Gumroad or GitHub Releases), double-click the `.vsix` file to launch the VSIX Installer.*
-   After installation, restart Visual Studio if prompted.
+   *Alternatively, if you have a .vsix file from Gumroad or GitHub Releases, double-click the `.vsix` file to launch the VSIX Installer.*
+   After installation, restart Visual Studio.
 
 2. **Verify Installation:** Once Visual Studio reopens, go to **Extensions > Manage Extensions > Installed**. You should see **CodeVoyant** listed. Also, a new **CodeVoyant** command should be available (for example, in the code editor context menu or a top-level menu). The extension also adds an entry in **Tools > Options** for configuration.
 
@@ -188,6 +186,8 @@ As you can see, it added a `<summary>` explaining the method’s purpose, `<para
 ## Tips for Best Results
 
 To get the most out of CodeVoyant, consider these tips and best practices:
+
+* **Use source control:** The AI CAN alter code in its response, typicaly reframing identical logic in newer coding styles, however, always compare, contrast and verify changes!
 
 * **Select logical units of code:** The AI does best when it has context. Selecting an entire method (including its signature) gives it context about parameters and purpose, yielding better `<summary>` and `<param>` docs. If you only select inside a method, it might not know the method name or purpose, so it will just comment the lines. When possible, include the method or property signature in the selection for fuller docs.
 
