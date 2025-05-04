@@ -225,17 +225,17 @@ CodeVoyant is a paid extension with a **5-day free trial**. Here’s how the lic
 
 * **License Validation:** CodeVoyant performs a license or trial check whenever you trigger the generation command. If you are outside the trial window and no valid license is present, it will **not generate comments**; instead, it will show a message box indicating the license is expired and provide the Gumroad link to purchase. This ensures compliance. Once you activate with a valid key, that check will pass and you’ll be able to use the tool normally.
 
-* **Offline Usage:** The license check is done within the extension (the license key likely encodes the expiration or is verified via an algorithm). You do not need to be online for the license to work after activation. (However, note that using OpenAI/Azure requires internet by nature for the AI calls.)
+* **Offline LLM Usage:** The license check is done within the extension via an Internet call so your PC will still need to have internet access for the license validation to work even when using a local LLM service.  However, note that using OpenAI/Azure requires internet by nature for the AI calls.
 
-* **License Scope:** Each license is presumably per user/developer. If you use multiple machines, you might use the same key on them (if allowed by the terms; check the License Agreement). Do not share the key publicly. The license is “revocable” and tied to internal use as per the EULA.
+* **License Scope:** Each license is per user/developer. If you use multiple machines, you can use the same key on them. Do not share the key publicly. The license is “revocable” and tied to internal use as per the EULA.
 
-* **Upgrades:** Minor upgrades of CodeVoyant (v1.x to v1.y) will recognize the same license. If a major new version is released, the developer might issue new keys or upgrades – details would be announced. (This is speculative; include if you have a policy on major version licensing.)
+* **Upgrades:** Minor upgrades of CodeVoyant Lite (v1.x to v1.y) will recognize the same license. If a major new version is released, we may issue new keys or discounts on upgrades – details would be announced at the time of release.  CodeVoyant Ultra is currently in development and carries different licensing requirements.
 
-* **Uninstalling/Reinstalling:** If you uninstall the extension, your license key may remain in the VS settings (or not, depending on VS behavior). It’s good to keep a copy of your license key in a safe place (the Gumroad receipt email, for instance). You can re-enter it if needed.
+* **Uninstalling/Reinstalling:** If you uninstall the extension, your license key may or may not remain in the VS settings, depending on VS behavior. It’s good to keep a copy of your license key in a safe place (the Gumroad receipt email, for instance). You can re-enter it if needed.
 
-* **Support:** For any issues with licensing (e.g., your key isn’t working, or you purchased but didn’t receive a key), contact the support email or Gumroad seller (Bean Masters, presumably) for assistance.
+* **Support:** For any issues with licensing (e.g., your key isn’t working, or you purchased but didn’t receive a key), contact support through email (CodeVoyant@beanmasters.com) or Gumroad for assistance.
 
-* **License Agreement:** The extension comes with a software license agreement (see *License.txt* in the installation or on the GitHub repo). It basically states that the software is provided as-is, and that using third-party AI services through it is at your own risk. It prohibits redistributing the extension or attempting to reverse-engineer it. By activating, you agree to these terms. (This is standard; just be aware, especially if using in a corporate environment – one license per user, etc.)
+* **License Agreement:** The extension comes with a software license agreement (see *License.txt* in the installation or on the GitHub repo). It basically states that the software is provided as-is, and that using third-party AI services through it is at your own risk. It prohibits redistributing the extension or attempting to reverse-engineer it. By activating, you agree to these terms.
 
 ## Troubleshooting & FAQ
 
