@@ -1,9 +1,8 @@
-# <img src="images/CodeVoyant_Icon.png" alt="CodeVoyant Icon" width="50" /> CodeVoyant
 <img src="images/CodeVoyant_Icon.png" alt="CodeVoyant Icon" width="50" align="left" /> **CodeVoyant Lite** is an AI-powered Visual Studio extension that generates **comprehensive source code comments** directly in your code files. It leverages LLMs like OpenAI’s GPT service or local LLMs to produce high-quality docs that describe **what the code does (not just how it does it)**. Stop writing comments by hand – let CodeVoyant **intelligently document your code** in seconds.
 
 ![CodeVoyant Demo](images/DemoAnimation.gif)
 
-**Features:**
+# **Features:**
 
 * **Automated Documentation:** Instantly add language-specifc comment documentation like C#-style `<summary>` descriptions, parameter `<param>` tags, `<returns>` explanations, `<exception>` notes, and more for your functions and classes. Even inserts helpful inline code comments for complex logic.
 * **Multiple LLM Support:** Works with OpenAI (ChatGPT API), Azure OpenAI Service, or local models via Ollama. Choose GPT-4o or higher for best bang for the buck, or use a local Llama-based model hosted with your Ollama instance for security and cost cosinderations – CodeVoyant’s flexible backend supports it.
@@ -12,7 +11,7 @@
 * **Integrated Workflow:** Use a simple command (e.g. a context menu **“Generate Comments”**) inside Visual Studio. The extension uses Visual Studio’s undo/redo, formatting, and output window to give a seamless, native feel.
 * **Token & Cost Control:** Set daily token limits for each AI provider in the options. This helps manage API usage (for OpenAI/Azure) to avoid unexpected costs by limiting how much content can be processed or generated per day.
 
-**Benefits:**
+# **Benefits:**
 
 * **🙌 Improved Code Quality:** Well-documented code is easier to understand and maintain for both humans and AI. CodeVoyant ensures every method or class gets clear documentation, which helps onboard team members and future-proof your codebase.
 * **⏱ Time Savings:** Just thinking about documentation and code comments can be time-consuming. CodeVoyant automates this tedious task – what used to take hours can now be done in seconds. Developers can spend more time coding and solving problems, less time writing comments.
@@ -20,9 +19,9 @@
 * **🎛 Minimal Setup:** Just install the extension and configure your API keys (for OpenAI/Azure) or local endpoint (for Ollama). No complex configuration – it works out-of-the-box with sensible defaults (e.g., uses GPT-3.5 by default, which you can change).
 * **🔒 Privacy Control:** Concerned about sending code to the cloud? Use Ollama with a local LLM so your code stays on your machine. CodeVoyant gives you the choice to keep things local if required.
 
-**Installation:** Install CodeVoyant from the Visual Studio Marketplace (supports VS 2022 and later). After installation, open **Tools > Options > CodeVoyant** to select an LLM provider and enter any required API keys or endpoints. *(See detailed “Help Documentation” below for setup and usage instructions.)*
+# **Installation:** Install CodeVoyant from the Visual Studio Marketplace (supports VS 2022 and later). After installation, open **Tools > Options > CodeVoyant** to select an LLM provider and enter any required API keys or endpoints. *(See detailed “Help Documentation” below for setup and usage instructions.)*
 
-**License:** CodeVoyant comes with a free 5-day trial. To continue using after the trial, purchase a license via the Gumroad link provided. Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
+# **License:** CodeVoyant comes with a free 5-day trial. To continue using after the trial, purchase a license via the Gumroad link provided. Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
 
 > **Legal Disclaimer:** This extension uses third-party AI services (OpenAI, Azure, etc.). All AI-generated content should be reviewed for accuracy. Use of third-party LLM services is at your own risk; please comply with their terms of service. The extension is provided “as-is” without warranties. See the License for full details.
 
