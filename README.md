@@ -37,15 +37,13 @@ By using this application, you acknowledge and agree that you assume all risks a
 
 ## Installation Guide
 
-**Prerequisites:** Microsoft Visual Studio 2022 (or later). (The extension is tested on VS2022; it should also work on VS2022 Community/Professional/Enterprise editions. *If interested in VS2019, join or post an issue.* An internet connection is required for using cloud AI providers (OpenAI/Azure).
+**Prerequisites:** Microsoft Visual Studio 2022 (or later). (The extension is tested with Visual Studio Pro 2022; it will also work with Community/Enterprise editions. *If interested in VS2019, post a GitHub issue.* An internet connection is required for using cloud AI providers (OpenAI/Azure).
 
 **Installation Steps:**
 
-1. **Download & Install Extension:** Get CodeVoyant from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=YourName.CodeVoyant) or via Visual Studio’s **Extensions > Manage Extensions** dialog (search “CodeVoyant”). Click **Download** and follow prompts to install.
-   *Alternatively, if you have a .vsix file from Gumroad or GitHub Releases, double-click the `.vsix` file to launch the VSIX Installer.*
-   After installation, restart Visual Studio.
+1. **Download & Install Extension:** Get CodeVoyant from the [GitHub Releases]([https://marketplace.visualstudio.com/items?itemName=YourName.CodeVoyant](https://github.com/Beanmasters/CodeVoyant_Lite_for_VisualStudio/releases)) or via Visual Studio’s **Extensions > Manage Extensions** dialog (search for “CodeVoyant”). Double-click to launch the VSIX installer and follow prompts to install.  A visual Studio restart may be required.
 
-2. **Verify Installation:** Once Visual Studio reopens, go to **Extensions > Manage Extensions > Installed**. You should see **CodeVoyant** listed. Also, a new **CodeVoyant** command should be available (for example, in the code editor context menu or a top-level menu). The extension also adds an entry in **Tools > Options** for configuration.
+2. **Verify Installation:** In Visual Studio, go to **Extensions > Manage Extensions > Installed**. You should see **CodeVoyant** listed. Also, a new editor right-click context menu option **Generate Comments** command should be available.  The extension also adds an entry in **Tools > Options** for configuration.
 
 3. **Initial Launch (Trial):** On first use, CodeVoyant will operate in trial mode (5 days full functionality). You do not need to enter a license key initially. Proceed to configuration to set up your AI provider.
 
@@ -53,13 +51,13 @@ By using this application, you acknowledge and agree that you assume all risks a
 
 Before generating documentation, configure which Large Language Model service CodeVoyant should use. Open the **Options** dialog:
 
-* In Visual Studio, go to **Tools > Options**. Scroll to find **CodeVoyant** in the left tree (it might be under “Extensions” or as its own top-level section). Click **CodeVoyant – General** to see the settings.
+* In Visual Studio, go to **Tools > Options**. Scroll or search to find **CodeVoyant** in the left tree. Click **CodeVoyant – General** to see the settings.
 
 You will see several categories of settings:
 
 **0. Subscription**
 
-* **License Key:** *(Leave this blank during the trial.)* After purchasing, enter your Gumroad license key here to unlock the extension permanently. (See [Licensing](#licensing-activation) below for details.)
+* **License Key:** *(Leave this blank during the trial.)* After purchasing a license key from [Gumroad](https://beanmasters.gumroad.com/l/CodeVoyantLiteForVisualStudio), enter your license key here to unlock the extension permanently. (See [Licensing](#licensing-activation) below for details.)
 
 **1. Service Provider**
 
@@ -73,16 +71,16 @@ Depending on your choice, fill out the corresponding settings category:
 
 **2. OpenAI Settings** (Use if **Service Provider = OpenAI**):
 
-* **Model Name:** The model to use (e.g., `"gpt-3.5-turbo"` or `"gpt-4"` or any other model ID you have access to). Enter the model name exactly as OpenAI defines it.
-* **API Key:** Your OpenAI API secret key. *(You can create one at OpenAI’s website if you don’t have it.)* Paste it here. The key is stored securely (it will be encrypted in your settings).
-* **Comment Format Instructions File:** (Optional) Path to a custom instructions file on your computer. If you want to override the default documentation style, you can provide a markdown file with instructions for the AI. Otherwise, leave blank to use CodeVoyant’s defaults.
-* **Daily Input Token Limit / Daily Output Token Limit:** (Optional) You can set a cap on how many tokens (characters/words) you send to and receive from OpenAI per day. If you’re concerned about API costs, you might set a limit (e.g., 10000 input tokens and 10000 output tokens per day). Set to `-1` for no limit. *(If the limits are exceeded, CodeVoyant will stop generating and likely prompt or log a message.)*
+* **Model Name:** The model to use (e.g., `"gpt-4o"` or any other model ID you have access to). Enter the model name exactly as OpenAI defines it.
+* **API Key:** Your OpenAI API secret key. *(You can create an API account on OpenAI’s website.)* Paste it here. The key is stored securely (it will be encrypted in your settings).
+* **Comment Format Instructions File:** (Optional) Path to a custom instructions file on your computer. If you want to override the default documentation style, you can provide a markdown file with instructions for the AI. Otherwise, leave blank to use CodeVoyant’s defaults.  See [Example Custom Instructions](https://github.com/Beanmasters/CodeVoyant_Lite_for_VisualStudio/tree/main/ExampleCustomInstructions) for some examples.
+* **Daily Input Token Limit / Daily Output Token Limit:** (Optional) You can set a cap on how many tokens (characters/words) you send to and receive from OpenAI per day. If you’re concerned about API costs, you might set a limit (e.g., 10000 input tokens and 10000 output tokens per day). Set to `-1` for no limit. *(If the limits are exceeded, CodeVoyant will stop generating after the prompt response that crosses the token limit and prompt/log a message.)*
 
 **3. Ollama Settings** (Use if **Service Provider = Ollama**):
 
 * **Model Name:** Name of the local model to use, as recognized by Ollama. For example, `llama2` or `CodeLlama-7B` or any model you have installed. Ensure the model is downloaded and available to the Ollama service.
 * **Endpoint URL:** The URL where Ollama is running. Default is `http://localhost:11434/api/chat` (which is the default for Ollama on your local machine). Change this if your Ollama service is on a different address/port.
-* **Comment Format Instructions File:** (Optional) Similar to OpenAI above – a path to a custom prompt file for documentation style. Can be the same file if you want consistent style across providers.
+* **Comment Format Instructions File:** (Optional) Custom instructions file path, same idea as above.
 * **Daily Input/Output Token Limit:** (Optional) Limits for local generation. (Even though local models don’t have cost, you might limit for performance reasons.)
 
 **4. Azure Settings** (Use if **Service Provider = Azure**):
@@ -93,43 +91,41 @@ Depending on your choice, fill out the corresponding settings category:
 * **Comment Format Instructions File:** (Optional) Custom instructions file path, same idea as above.
 * **Daily Input/Output Token Limit:** (Optional) As above, to control usage.
 
-After entering the relevant info for your provider, click **OK** to save settings. **Important:** If you entered a license key or changed provider, it’s best to restart Visual Studio to ensure all changes take effect (especially license activation which might require a restart).
+After entering the relevant info for your provider, click **OK** to save settings. **Important:** If you entered a license key, it’s best to restart Visual Studio to ensure all changes take effect.
 
-*Tips:* It’s recommended to test the setup with a small code snippet to ensure everything is working. If using OpenAI or Azure, you must have an active internet connection. If using Ollama (local), ensure the Ollama server is running before you attempt to use CodeVoyant (you can start it via command line or it might auto-start when called). The first time a local model is invoked, there might be a delay as it loads into memory – subsequent uses will be faster.
+*Tips:* It’s recommended to test the setup with a small code snippet to ensure everything is working. If using OpenAI or Azure, you must have an active internet connection. If using Ollama (local), ensure the Ollama server is running before you attempt to use CodeVoyant (you can start it via command line or it might auto-start when called). The first time a local model is invoked, there might be a delay as it loads the model into memory – subsequent uses will be faster.
 
 ## Usage Instructions
 
 Once installed and configured, using CodeVoyant is straightforward. The workflow is: **select code ➜ generate comments ➜ review.**
 
-**1. Open a Code File:** Open a source code file in Visual Studio (for example, a C# file). CodeVoyant is primarily designed for C# (it inserts `///` XML comments and `//` comments appropriately). It may work on other languages with similar comment syntax (like C++ or VB.NET) by inserting comments, but C# is the main target.
+**1. Open a Code File:** Open a source code file in Visual Studio (for example, a C# file). CodeVoyant is primarily tested with C# (it inserts `///` XML comments and `//` comments appropriately), however, it can work on other languages providing similar comment syntax features.
 
 **2. Select the Code Block:** Highlight the portion of code you want to document. This could be a single method, an entire class, or even just a section of code. For best results:
 
-* **To document an entire method or class:** include the signature/declaration in your selection. For example, select from the line of the method signature down to the end of the method. This allows the AI to provide a `<summary>` for the method and `<param>` tags for each parameter.
-* **To document just a snippet of logic:** you can select a few lines inside a method. CodeVoyant will likely insert inline `//` comments for those lines rather than a top-of-method comment (since the context might not include the method declaration).
-* If you want to document a whole file or multiple methods at once, you can select a larger region (even Ctrl+A for the whole file). Be cautious with very large selections as the AI might hit context limits – but CodeVoyant will try its best, possibly focusing on one element at a time.
+* **To document an entire method or class:** include the signature/declaration/existing header comment in your selection. For example, select from the line of the method header/signature down to the end of the method. In the case of C#, this allows the AI to provide a `<summary>` for the method and `<param>` tags for each parameter.
+* **To document just a snippet of logic:** you can select a few lines inside a method. CodeVoyant will insert inline `//` comments for those lines rather than a top-of-method comment (since the context might not include the method declaration).
+* If you want to document a whole file or multiple methods at once, you can select a larger region (even Ctrl+A for the whole file). Be cautious with very large selections as the AI might hit model context limits which will require you to select smaller chunks of code for commenting.
 
-**3. Trigger CodeVoyant – “Generate Documentation”:** There are a few ways to invoke the documentation generation:
+**3. Trigger CodeVoyant – “Generate Comments”:** There are a few ways to invoke the documentation generation:
 
 * **Context Menu:** Right-click on the selected code. In the context menu, look for **“CodeVoyant: Generate Documentation”** (or similar wording). Click it.
-* **Keyboard Shortcut:** *(If configured)*. CodeVoyant might not have a default shortcut out-of-the-box. You can set one in **Options > Environment > Keyboard** by assigning a hotkey to the CodeVoyant command (look for commands named “CodeVoyantCommand” or similar). If you set, for example, `Ctrl+Shift+D` (which GhostDoc uses) or another combination, you can trigger it via keyboard.
-* **Menu Bar:** There may be a top menu item (e.g., **Extensions > CodeVoyant > Generate Documentation**). This depends on how the extension is registered. If it exists, you can click that menu item.
-* **Toolbar Button:** If CodeVoyant added a toolbar button, simply click the icon (likely the CodeVoyant logo) while your text is selected.
+* **Keyboard Shortcut:** *(If configured)*. CodeVoyant might not have a default shortcut out-of-the-box. You can set one in **Options > Environment > Keyboard** by assigning a hotkey to the CodeVoyant command (look for commands named “CodeVoyantCommand”). If you set, for example, `Ctrl+Shift+D` or another combination, you can trigger it via keyboard.
 
 Upon triggering, CodeVoyant will start processing the selection:
 
-* *Behind the scenes:* It sends your selected code to the chosen LLM along with its system instructions (which tell the AI to document the code without altering it). It opens an **Undo context** (so that all changes can be undone together if needed).
-* **Visual feedback:** Visual Studio’s status bar will show a spinner (the extension triggers the VS busy animation). You might also see output in the Output Window (a “CodeVoyant” pane) logging the progress for debugging purposes. The selected text will become unselected, and shortly after, you’ll see text start to appear in your code editor.
+* *Behind the scenes:* It sends your selected code to the chosen LLM along with its system instructions (which explicitly tell the AI to document the code without altering it). It opens an **Undo context** (so that all changes can be undone together if needed).
+* **Visual feedback:** Visual Studio’s status bar will show a spinner (the extension triggers the VS busy animation). You will also see output in the Output Window (a “CodeVoyant” pane) logging the progress for debugging purposes. The selected code will be removed, and shortly after, you’ll see the code with comments start to appear in the code editor window.
 
-**4. Watch Documentation Appear:** CodeVoyant streams the AI’s response directly into the editor. You will literally see text being inserted at the location of your selection. It will first insert the original code (since it temporarily removed it to re-insert with comments) and intermix comments. The experience is that your code reappears with `///` comments above methods and `//` inline comments where needed, materializing line by line. This streaming means you don’t have to wait for the entire AI response to finish before seeing results – longer documentation will appear gradually.
+**4. Watch Documentation Appear:** CodeVoyant streams the AI’s response directly into the editor. You will literally see text being inserted at the location of your selection. It will insert the original code (since it temporarily removed it to re-insert with comments) and intermix comments. The experience is that your code reappears with method/class header and inline comments where needed, materializing line by line. This streaming means you don’t have to wait for the entire AI response to finish before seeing results – longer documentation will appear gradually.
 
-* During this process, avoid typing or editing the document. The extension has locked the document for editing while it inserts content. If you try to intervene, you may get a warning or simply interrupt the process.
-* Typical generation time can range from a few seconds to maybe 30 seconds, depending on code size and the AI model (GPT-4 is slower than GPT-3.5, local models vary by your hardware speed). The Output Window (if opened to the CodeVoyant pane) might show debug info like token counts or partial text (you generally don’t need to monitor this unless troubleshooting).
+* During this process, avoid typing or editing the document. The extension has locked the document for editing while it inserts content.
+* Typical generation time can range from a few seconds to maybe 30 seconds, depending on code size and the AI model (GPT-4o is typically faster than a local PC hosted model depending on model size and your hardware). The Output Window (if opened to the CodeVoyant pane) will show debug info like input code, token counts, and any final non-code comments the model provided (you generally don’t need to monitor this unless troubleshooting).
 
 **5. Completion & Formatting:** Once the AI has finished, CodeVoyant will unlock the document and do a few post-processing steps:
 
 * It will remove any trailing extra newline the AI might have added at the end of your selection.
-* It then formats the inserted text. It uses Visual Studio’s **Edit.FormatSelection** command to properly indent and align the new comments with your code. This ensures the XML comments align with your code’s indentation level, and any inline comments are spaced correctly.
+* It then formats the inserted text. It uses Visual Studio’s **Format Selection** command to properly indent and align the new comments with your code. This ensures the code and comments align with your un-modified code’s indentation level, and any inline comments are spaced correctly.
 * The caret (cursor) will end up at the end of the newly inserted text (i.e., after the last generated comment/code line).
 
 Now your code is augmented with documentation! For example, if you had a method:
@@ -166,7 +162,7 @@ public int Add(int a, int b)
 }
 ```
 
-As you can see, it added a `<summary>` explaining the method’s purpose, `<param>` tags for each parameter, a `<returns>`, an `<exception>` for the thrown exception, and even inline comments inside the method body for clarity. *(This is just an example; the actual output may vary based on context and AI, but it illustrates the goal.)*
+As you can see, it added a `<summary>` explaining the method’s purpose, `<param>` tags for each parameter, a `<returns>`, an `<exception>` for the thrown exception, and even inline comments inside the method body for clarity. *(This is just an example; the actual output may vary based on context and model, but it illustrates the goal.)*
 
 **6. Review and Edit:** While CodeVoyant aims for accuracy, you should review the generated comments:
 
@@ -187,9 +183,9 @@ As you can see, it added a `<summary>` explaining the method’s purpose, `<para
 
 To get the most out of CodeVoyant, consider these tips and best practices:
 
-* **Use source control:** The AI CAN alter code in its response, typicaly reframing identical logic in newer coding styles, however, always compare, contrast and verify changes!
+* **Use source control:** The AI generaly does not but CAN alter code in its response, typicaly reframing identical logic in newer coding styles, however, always compare, contrast and verify changes!
 
-* **Select logical units of code:** The AI does best when it has context. Selecting an entire method (including its signature) gives it context about parameters and purpose, yielding better `<summary>` and `<param>` docs. If you only select inside a method, it might not know the method name or purpose, so it will just comment the lines. When possible, include the method or property signature in the selection for fuller docs.
+* **Select logical units of code:** The AI does best when it has context. Selecting an entire method (including its signature) gives it context about parameters and purpose, yielding better, more descriptive comments. If you only select inside a method, it might not know the method name or purpose, so it will just comment the lines. When possible, include the method or property signature in the selection for fuller documentation.
 
 * **Meaningful Names Help:** The AI will use identifiers (method name, parameter names) as clues. If your function is named `CalculateInvoiceTotal`, the summary will likely be great. If your function is named `DoIt` with parameters `x` and `y`, the AI has less to go on. In such cases, consider renaming things for clarity (a side benefit: encourages good naming). Or be ready to edit the AI’s output if it has to guess.
 
@@ -197,20 +193,20 @@ To get the most out of CodeVoyant, consider these tips and best practices:
 
   * Create a markdown file with additional instructions or examples. For instance, you might write: “Always include an `<example>` section with sample usage,” or “Use Markdown in <remarks> for code blocks.” Save this file and point CodeVoyant to it via the **Comment Format Instructions File** setting.
   * CodeVoyant will include your custom prompt for the AI, influencing its output. This can enforce consistency or special requirements across a team.
-  * The repository includes a default `SystemInstructions.md` (the built-in guidance for the AI) and a `C#CommentFormats.md` that detail how to format comments. Reviewing those can help you understand what the AI is instructed to do by default.
+  * Keep in mind custom instructions count towards token usage, so if you plan to document a whole file, going method-by-method will cost more in tokens than the whole file in one shot as each invocation incluides the custom instruction text.
+  * The repository includes inital `System Instructions` (the built-in guidance for the AI for things like "don't alter code, etc.") and examples of cutom instruction files can be found [here](https://github.com/Beanmasters/CodeVoyant_Lite_for_VisualStudio/tree/main/ExampleCustomInstructions).
 
-* **Model Selection:** If using OpenAI:
+* **Model Selection Thoughts:**
 
-  * `gpt-3.5-turbo` is fast and cost-effective, and usually produces good results for documentation on small-to-medium code.
-  * `gpt-4` is more capable with complex or larger code (and may produce more insightful comments), but it is slower and has higher cost. Use it for especially critical documentation or very complex code fragments where quality matters more.
-  * Azure OpenAI users similarly might have deployments of these models. Ensure your model deployment has enough max tokens to handle the code (if documenting a large class, the model needs sufficient context length).
-  * With **Ollama** (local models), quality varies by model. A smaller model (7B parameters) might produce okay summaries for small functions but could miss nuances. Larger models (13B, 30B) will do better but require more memory. If using Code Llama or similar code-specialized models locally, you might get decent results. It’s a trade-off for privacy – be mindful that local models might need you to review/edit a bit more.
+  * OpenAI `gpt-4o` is a good value for the money as it has shown in testing to be capable with complex or larger code (and may produce more insightful comments).
+  * Azure OpenAI users have options for almost all but the latest OpenAI models. Ensure your model deployment has enough max tokens to handle the code (if documenting a large class, the model needs sufficient context length).
+  * With **Ollama** (local models), quality varies by model. A smaller model (7B parameters) might produce okay summaries for small functions but could miss nuances. Larger models (13B, 30B) will do better but require more memory and will respond slower. These are trade-off for privacy and costs.
 
 * **Iterate if Needed:** AI content generation isn’t deterministic (unless you use temperature 0 as default in some cases). If a generated comment is not satisfactory, you can undo and try again. It may word things differently the second time. If it *consistently* doesn’t do what you want (e.g., it’s skipping something important or adding too much detail), adjust the instructions or just manually edit the result. Over time, you’ll get a feel for what kind of output to expect and instruct accordingly.
 
-* **Avoid Over-Commenting:** The goal is to document **what** the code does and any important why’s – not to explain every line of trivial code. The default instructions already tell the AI to avoid commenting self-evident code. This leads to cleaner documentation. Trust this judgment; it keeps comments high-value. If you find the AI left something out that you do want, you can add a comment manually or tweak the prompt to be more verbose. In general, less is more when the code is obvious (e.g., it won’t comment `i++` loop increments or simple property getters).
+* **Avoid Over-Commenting:** The goal is to document **what** the code does and any important why’s – not to explain every line of trivial code. The default instructions already tell the AI to avoid commenting self-evident code. This leads to cleaner documentation. Trust this judgment; it keeps comments high-value. If you find the AI left something out that you do want, you can add a comment manually or tweak the prompt to be more verbose. In general, less is more when the code is obvious (e.g., why comment `i++` loop increments or simple property getters?).
 
-* **Be mindful of API limits:** If you set token limits (or if you’re on a trial tier of an API), the extension will enforce those. If CodeVoyant stops generating and reports in the Output window that a token limit was hit, you may need to increase or disable the limit in Options or wait until the next day (the limits reset daily) to generate more documentation. This is primarily to protect you from unexpected usage (especially if using a personal OpenAI API key). If you’re actively documenting a large project, you might raise these limits or watch your API account’s usage on the provider’s dashboard.
+* **Be mindful of API limits:** If you set token limits (or if you’re on a trial tier of an API), the extension will enforce those. If CodeVoyant stops generating and reports in the Output window that a token limit was hit, you may need to increase or disable the limit in Options or wait until the next day (the limits reset daily at midnight in your time zone) to generate more documentation. This is primarily to protect you from unexpected usage (especially if using a personal OpenAI API key). If you’re actively documenting a large project, you might raise these limits and watch your API account’s usage on the provider’s dashboard.
 
 * **Check the Output Window for Errors:** If nothing happens when you trigger generation, open **View > Output** and select “CodeVoyant” from the drop-down. Error messages or warnings might be printed there. For instance, if your API key is invalid or you mis-typed the model name, you’ll see an error from the API. Common mistakes: wrong Azure endpoint URL format, or not having the Ollama service running. Fix any issues and try again.
 
