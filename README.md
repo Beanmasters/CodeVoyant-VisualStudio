@@ -1,9 +1,8 @@
-<img src="images/CodeVoyant_Icon.png" alt="CodeVoyant Icon" width="50" align="left" /> **CodeVoyant Lite** is an AI-powered Visual Studio extension that generates **comprehensive source code comments** directly in your code files. It leverages LLMs like OpenAI’s GPT service or local LLMs to produce high-quality docs that describe **what the code does (not just how it does it)**. Stop writing comments by hand – let CodeVoyant **intelligently document your code** in seconds.
+<img src="images/CodeVoyant_Icon.png" alt="CodeVoyant Icon" width="50" align="left" />**CodeVoyant Lite** is an AI-powered Visual Studio extension that generates **comprehensive source code comments** directly in your code files. It leverages LLMs like OpenAI’s GPT service or local LLMs to produce high-quality docs that describe **what the code does (not just how it does it)**. Stop writing comments by hand – let CodeVoyant **intelligently document your code** in seconds.
 
 ![CodeVoyant Demo](images/DemoAnimation.gif)
 
-# **Features:**
-
+# Features
 * **Automated Documentation:** Instantly add language-specifc comment documentation like C#-style `<summary>` descriptions, parameter `<param>` tags, `<returns>` explanations, `<exception>` notes, and more for your functions and classes. Even inserts helpful inline code comments for complex logic.
 * **Multiple LLM Support:** Works with OpenAI (ChatGPT API), Azure OpenAI Service, or local models via Ollama. Choose GPT-4o or higher for best bang for the buck, or use a local Llama-based model hosted with your Ollama instance for security and cost cosinderations – CodeVoyant’s flexible backend supports it.
 * **Real-Time Streaming:** Documentation appears in your editor as it’s generated, line by line. No waiting for a huge response – see updates live and get immediate feedback.
@@ -11,25 +10,34 @@
 * **Integrated Workflow:** Use a simple command (e.g. a context menu **“Generate Comments”**) inside Visual Studio. The extension uses Visual Studio’s undo/redo, formatting, and output window to give a seamless, native feel.
 * **Token & Cost Control:** Set daily token limits for each AI provider in the options. This helps manage API usage (for OpenAI/Azure) to avoid unexpected costs by limiting how much content can be processed or generated per day.
 
-# **Benefits:**
-
+# Benefits
 * **🙌 Improved Code Quality:** Well-documented code is easier to understand and maintain for both humans and AI. CodeVoyant ensures every method or class gets clear documentation, which helps onboard team members and future-proof your codebase.
 * **⏱ Time Savings:** Just thinking about documentation and code comments can be time-consuming. CodeVoyant automates this tedious task – what used to take hours can now be done in seconds. Developers can spend more time coding and solving problems, less time writing comments.
 * **⚙️ Flexibility:** Whether you prefer OpenAI’s latest models, have an enterprise Azure OpenAI deployment, or need an **offline** solution with local models, CodeVoyant has you covered. Switch providers anytime in the options to suit your needs or environment.
 * **🎛 Minimal Setup:** Just install the extension and configure your API keys (for OpenAI/Azure) or local endpoint (for Ollama). No complex configuration – it works out-of-the-box with sensible defaults (e.g., uses GPT-3.5 by default, which you can change).
 * **🔒 Privacy Control:** Concerned about sending code to the cloud? Use Ollama with a local LLM so your code stays on your machine. CodeVoyant gives you the choice to keep things local if required.
 
-# **Installation:** Install CodeVoyant from the Visual Studio Marketplace (supports VS 2022 and later). After installation, open **Tools > Options > CodeVoyant** to select an LLM provider and enter any required API keys or endpoints. *(See detailed “Help Documentation” below for setup and usage instructions.)*
+# Installation
+Install CodeVoyant from the Visual Studio Marketplace (supports VS 2022 and later). After installation, open **Tools > Options > CodeVoyant** to select an LLM provider and enter any required API keys or endpoints. *(See detailed “Help Documentation” below for setup and usage instructions.)*
 
-# **License:** CodeVoyant comes with a free 5-day trial. To continue using after the trial, purchase a license via the Gumroad link provided. Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
+# License
+CodeVoyant comes with a free 5-day trial and requires a user-proved LLM service. To continue using after the trial, purchase a license via the Gumroad link provided. Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
+
+- Ollama Setup: https://github.com/ollama/ollama/tree/main
+- OpenAI Pricing: https://openai.com/api/pricing/
+- Azure Pricing: https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/
 
 > **Legal Disclaimer:** This extension uses third-party AI services (OpenAI, Azure, etc.). All AI-generated content should be reviewed for accuracy. Use of third-party LLM services is at your own risk; please comply with their terms of service. The extension is provided “as-is” without warranties. See the License for full details.
 
-## Help Documentation
+> This application is provided "as is" without any warranties, either express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. The developer does not control, endorse, or guarantee the accuracy, security, or reliability of any third-party large language model (LLM) services configured or accessed by the user through this application. Use of any third-party LLM service is solely at the user's risk.
+The developer shall not be liable for any direct, indirect, incidental, consequential, or special damages, or any damages whatsoever arising out of or in connection with the use or inability to use the application or any third-party LLM service, including but not limited to loss of data, loss of profits, or interruption of business. It is the sole responsibility of the user to assess the suitability, security, and compliance of any third-party LLM service with applicable laws, regulations, and internal policies.
+By using this application, you acknowledge and agree that you assume all risks associated with the use of any third-party LLM services and release the developer from any and all liability arising from such use. This disclaimer is provided for general informational purposes only and does not constitute legal advice. Users are encouraged to consult with a qualified legal professional regarding any legal concerns or requirements.
+
+# Help Documentation
 
 This section serves as the user guide for CodeVoyant. It covers installation, setup, usage, tips, and licensing. Share this with users via your README or a dedicated documentation site. Use a friendly, instructional tone.
 
-### Installation Guide
+## Installation Guide
 
 **Prerequisites:** Microsoft Visual Studio 2022 (or later). (The extension is tested on VS2022; it should also work on VS2022 Community/Professional/Enterprise editions. *If VS2019 is supported, mention it here.*) An internet connection is required for using cloud AI providers (OpenAI/Azure).
 
@@ -91,7 +99,7 @@ After entering the relevant info for your provider, click **OK** to save setting
 
 *Tips:* It’s recommended to test the setup with a small code snippet to ensure everything is working. If using OpenAI or Azure, you must have an active internet connection. If using Ollama (local), ensure the Ollama server is running before you attempt to use CodeVoyant (you can start it via command line or it might auto-start when called). The first time a local model is invoked, there might be a delay as it loads into memory – subsequent uses will be faster.
 
-### Usage Instructions
+## Usage Instructions
 
 Once installed and configured, using CodeVoyant is straightforward. The workflow is: **select code ➜ generate comments ➜ review.**
 
@@ -177,7 +185,7 @@ As you can see, it added a `<summary>` explaining the method’s purpose, `<para
 * Backfilling documentation for legacy code – you can go method by method, or select a whole class to document many members at once.
 * Getting a quick understanding of unfamiliar code: even if you don’t intend to keep the comments, running CodeVoyant on someone else’s code can give you an explanation of what it does (like an AI code review). This can be a learning tool.
 
-### Tips for Best Results
+## Tips for Best Results
 
 To get the most out of CodeVoyant, consider these tips and best practices:
 
@@ -208,7 +216,7 @@ To get the most out of CodeVoyant, consider these tips and best practices:
 
 * **Using with Other Extensions:** CodeVoyant should play nicely with other tools. For example, if you have formatting tools like ReSharper or CodeMaid, the inserted comments might trigger their inspections (like spelling checks or formatting suggestions). That’s usually fine. One thing to note: if you have GitHub Copilot active, Copilot might try to also suggest comments when you type `///`. When using CodeVoyant, you’re bypassing Copilot’s suggestion flow by selecting and commanding generation, so they shouldn’t conflict. In fact, you can use both: Copilot for on-the-fly suggestions and CodeVoyant for bulk or on-demand documentation.
 
-### Licensing & Activation
+## Licensing & Activation
 
 CodeVoyant is a paid extension with a **5-day free trial**. Here’s how the licensing works and how to activate your copy:
 
@@ -233,9 +241,7 @@ CodeVoyant is a paid extension with a **5-day free trial**. Here’s how the lic
 
 * **License Agreement:** The extension comes with a software license agreement (see *License.txt* in the installation or on the GitHub repo). It basically states that the software is provided as-is, and that using third-party AI services through it is at your own risk. It prohibits redistributing the extension or attempting to reverse-engineer it. By activating, you agree to these terms. (This is standard; just be aware, especially if using in a corporate environment – one license per user, etc.)
 
-### Troubleshooting & FAQ
-
-*(Include a brief FAQ if common questions arise. Here are a couple of anticipated ones:)*
+## Troubleshooting & FAQ
 
 * **“The extension isn’t doing anything when I click generate.”**
   – Make sure you have some code selected. The tool will not run if nothing is selected, and will show a message “No code selected.”. Also confirm your license/trial is still valid; if not, it will refuse to run. Check the Output window for any error logs. Lastly, ensure your configuration (API keys, etc.) is correct; an invalid API key could result in no response.
