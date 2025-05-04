@@ -235,12 +235,12 @@ CodeVoyant is a paid extension with a **5-day free trial**. Here’s how the lic
 
 * **Support:** For any issues with licensing (e.g., your key isn’t working, or you purchased but didn’t receive a key), contact support through email (CodeVoyant@beanmasters.com) or Gumroad for assistance.
 
-* **License Agreement:** The extension comes with a software license agreement (see *License.txt* in the installation or on the GitHub repo). It basically states that the software is provided as-is, and that using third-party AI services through it is at your own risk. It prohibits redistributing the extension or attempting to reverse-engineer it. By activating, you agree to these terms.
+* **License Agreement:** The extension comes with a software license agreement (see *[License.txt](https://github.com/Beanmasters/CodeVoyant_Lite_for_VisualStudio/blob/main/License.txt)* in the installation or on the GitHub repo). It basically states that the software is provided as-is, and that using third-party AI services through it is at your own risk. It prohibits redistributing the extension or attempting to reverse-engineer it. By activating, you agree to these terms.
 
 ## Troubleshooting & FAQ
 
 * **“The extension isn’t doing anything when I click generate.”**
-  – Make sure you have some code selected. The tool will not run if nothing is selected, and will show a message “No code selected.”. Also confirm your license/trial is still valid; if not, it will refuse to run. Check the Output window for any error logs. Lastly, ensure your configuration (API keys, etc.) is correct; an invalid API key could result in no response.
+  – Make sure you have some code selected or are right-clicking on a method name. The tool will not run if nothing is selected, and will show a message “No code selected.”. Also confirm your license/trial is still valid; if not, it will refuse to run. Check the Output window for any error logs. Lastly, ensure your configuration (API keys, etc.) is correct; an invalid API key could result in no response.
 
 * **“I got an error about token limit or API.”**
   – This means either you hit a self-imposed token limit (adjust in Options or set to -1 for unlimited), or the AI service returned an error. For OpenAI, common errors are invalid API key, or model not found (check model name), or quota exceeded. For Azure, ensure your endpoint URL and deployment name are correct and that your resource has available quota. For Ollama, the error might say it can’t connect to the endpoint – ensure Ollama is running and the URL is correct.
@@ -249,9 +249,9 @@ CodeVoyant is a paid extension with a **5-day free trial**. Here’s how the lic
   – CodeVoyant does not translate comments; it generates them in English by default (since that’s the typical language for code documentation). If you need another language, you might try adding a custom instruction like “Respond in Spanish” in a custom prompt file, but results may vary. The primary use case is English documentation.
 
 * **“Can I use this for languages other than C#?”**
-  – The current version is optimized for C# (.NET) using XML comments. If you use it on a C++ file, it might still insert comments (it will detect the file’s language and attempt something). But XML `<summary>` tags in C++ are not typical (C++ uses either `///` or `/** ... */` with Doxygen or triple slash if enabled). We have not explicitly added support for Doxygen format. Future versions may expand language support. For now, consider it a C# targeted tool. (It will still put `//` inline comments in any language for line comments.)
+  – The current version is tested with C# code and comment styles. If you use it on a another language file, as long as Visual Sstudio recognizes the language, it will still insert comments (CodeVoyant uses Visual Studio to detect the file’s language and pass that along to the LLM).
 
 * **“How do I update CodeVoyant?”**
-  – Updates, when released, will be available via the Visual Studio Marketplace. You can update through **Extensions > Manage Extensions > Updates** within VS. Your settings and license will carry over. Check the GitHub releases or marketplace changelog for what’s new in each update.
+  – Updates, when released, will be available via the Visual Studio Marketplace and GitHub, and Gumroad for future purchases. You can update through **Extensions > Manage Extensions > Updates** within VS. Your settings and license will carry over. Check the GitHub releases or marketplace changelog for what’s new in each update.
 
-This concludes the help documentation. Happy documenting with CodeVoyant! If you have further questions or need support, please refer to our GitHub repository’s Issues section or contact the developer via the support email provided. Enjoy your more documented and maintainable codebase!
+This concludes the help documentation. Happy documenting with CodeVoyant! If you have further questions or need support, please refer to our GitHub repository’s Issues section or support via email (CodeVoyant@beanmasters.com). Enjoy your more documented and maintainable codebase!
