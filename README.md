@@ -21,7 +21,7 @@
 Install CodeVoyant from the Visual Studio Marketplace (supports VS 2022 and later). After installation, open **Tools > Options > CodeVoyant** to select an LLM provider and enter any required API keys or endpoints. *(See detailed “Help Documentation” below for setup and usage instructions.)*
 
 # License
-CodeVoyant comes as a 5-day trial and requires a user-provided LLM service. To continue using after the trial, purchase a license via the Gumroad link [here](https://beanmasters.gumroad.com/l/CodeVoyantLiteForVisualStudio). Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
+CodeVoyant comes as a 5-day trial and requires a user-provided LLM service. To continue using after the trial, purchase a license **($5 perpetual limited-time offer!)** via the Gumroad link [here](https://beanmasters.gumroad.com/l/CodeVoyantLiteForVisualStudio). Enter the license key in the options and restart Visual Studio to activate. (The extension will remind you to activate if the trial has expired.)
 
 - Ollama Setup: https://github.com/ollama/ollama/tree/main
 - OpenAI Pricing: https://openai.com/api/pricing/
