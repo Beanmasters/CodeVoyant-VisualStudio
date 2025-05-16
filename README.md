@@ -1,4 +1,4 @@
-<img src="images/CodeVoyant_Icon.png" alt="CodeVoyant Icon" width="50" align="left" />**CodeVoyant Lite** is an AI-powered Visual Studio extension that generates **comprehensive source code comments** directly in your code files. It leverages LLMs like OpenAI’s GPT service or local LLMs to produce high-quality docs that describe **what the code does (not just how it does it)**. Stop writing comments by hand – let CodeVoyant **intelligently document your code** in seconds.
+<img src="images/CodeVoyant_Icon.png" alt="CodeVoyant Icon" width="50" align="left" />**CodeVoyant Lite** is an AI-powered Visual Studio extension that generates **comprehensive source code comments** directly in your code files. Bring Your Own AI (BYOAI) - It leverages LLMs like OpenAI’s GPT service or local LLMs to produce high-quality docs that describe **what the code does (not just how it does it)**. Stop writing comments by hand – let CodeVoyant **intelligently document your code** in seconds.
 
 ![CodeVoyant Demo](images/DemoAnimation.gif)
 
